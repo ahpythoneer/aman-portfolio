@@ -21,7 +21,7 @@ jobs:
         docker compose up -d --build
         sleep 10
         curl -f http://localhost/api/health || exit 1
-        docker-compose down
+        docker compose down
 
   deploy:
     needs: build-and-test
