@@ -184,7 +184,7 @@ def projects():
                 "data_points_per_day": "1M+",
                 "cost_savings": "$50K/year"
             },
-            "tech": ["Grafana", "Prometheus", "Python", "InfluxDB", "SNMP", "Docker"],
+            "tech": ["Grafana", "Prometheus", "Python", "InfluxDB", "SNMP", "RestAPIx"],
             "status": "production",
             "year": 2023
         },
