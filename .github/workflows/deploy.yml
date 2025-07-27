@@ -1,0 +1,49 @@
+name: Deploy Portfolio
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+    
+    - name: Build and Test
+      run: |
+        docker-compose up -d --build
+        sleep 10
+        curl -f http://localhost/api/health || exit 1
+        docker-compose down
+
+  deploy:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Deploy to Home Lab
+      env:
+        HOST: ${{ secrets.HOMELAB_HOST }}
+        USER: ${{ secrets.HOMELAB_USER }}
+        KEY: ${{ secrets.HOMELAB_SSH_KEY }}
+      run: |
+        echo "$KEY" > deploy_key
+        chmod 600 deploy_key
+        ssh -o StrictHostKeyChecking=no -i deploy_key $USER@$HOST << 'ENDSSH'
+          cd /opt/portfolio
+          git pull origin main
+          docker-compose down
+          docker-compose up -d --build
+          docker system prune -f
+        ENDSSH
+        rm deploy_key
