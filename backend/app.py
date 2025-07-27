@@ -278,7 +278,7 @@ def certifications():
             "name": "Google Cloud Professional Cloud Architect",
             "issuer": "Google Cloud",
             "issue_date": "2023-07-01",
-            "expiry_date": "2025-07-01",
+            "expiry_date": "2027s-07-01",
             "credential_id": "GCP-PCA-789012",
             "verification_url": "https://cloud.google.com/certification",
             "badge_url": "/badges/gcp-pca.png"
