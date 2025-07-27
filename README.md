@@ -10,6 +10,4 @@ Modern, interactive portfolio showcasing automation & infrastructure expertise.
 
 ## Quick Start
 
-docker-compose up --build
-
-Visit: http://localhost
+docker compose up -d
