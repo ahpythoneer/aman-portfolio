@@ -18,7 +18,7 @@ jobs:
     
     - name: Build and Test
       run: |
-        docker-compose up -d --build
+        docker compose up -d --build
         sleep 10
         curl -f http://localhost/api/health || exit 1
         docker-compose down
@@ -42,8 +42,8 @@ jobs:
         ssh -o StrictHostKeyChecking=no -i deploy_key $USER@$HOST << 'ENDSSH'
           cd /opt/portfolio
           git pull origin main
-          docker-compose down
-          docker-compose up -d --build
+          docker compose down
+          docker compose up -d --build
           docker system prune -f
         ENDSSH
         rm deploy_key
