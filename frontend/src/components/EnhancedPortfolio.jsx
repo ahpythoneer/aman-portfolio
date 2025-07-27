@@ -327,7 +327,7 @@ export default function EnhancedPortfolio() {
                 </a>
               ))}
               <a
-                href="https://github.com/yourgithub"
+                href="https://github.com/ahpythoneer"
                 className="p-2 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all hover:scale-110"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -530,7 +530,7 @@ export default function EnhancedPortfolio() {
               Email Me
             </a>
             <a 
-              href="https://linkedin.com/in/amanthepythonman"
+              href="https://www.linkedin.com/in/amanthepythonman/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 px-6 py-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all hover:scale-105"
@@ -539,7 +539,7 @@ export default function EnhancedPortfolio() {
               LinkedIn
             </a>
             <a 
-              href="https://github.com/yourgithub"
+              href="https://github.com/ahpythoneer"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 px-6 py-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all hover:scale-105"
