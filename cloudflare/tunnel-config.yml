@@ -1,5 +1,5 @@
 tunnel: YOUR_TUNNEL_ID_HERE
-credentials-file: /home/aman/.cloudflared/ef40541a-4167-4039-85e7-55115df8b731.json
+credentials-file: /home/aman/.cloudflared/tunnel_id.json
 
 ingress:
   - hostname: racktocloud.com
